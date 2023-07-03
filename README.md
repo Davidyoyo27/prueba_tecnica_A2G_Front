@@ -1,24 +1,11 @@
 # prueba-tecnica-a2g
+El proyecto trata de consumir los endpoints entregardos por la empresa y efectuar un Login, y mostrar los datos consumidos en diferentes paginas
 
 ## Project setup
-```
+Este el proyecto de Front-End para la prueba tecnica de la empresa A2G
+
+## Instalar dependencias para hacer funcionar el proyecto
 npm install
-```
 
-### Compiles and hot-reloads for development
-```
+## Correr el servidor
 npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

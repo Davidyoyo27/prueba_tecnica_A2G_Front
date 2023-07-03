@@ -81,7 +81,6 @@ h1, .info_data{
 }
 
 .container {
-  /* background-color: brown; */
   width: 80%;
   padding: 2rem;
   display: flex;

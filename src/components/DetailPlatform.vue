@@ -11,7 +11,6 @@
       </div>
     </div>
     <div v-if="show_iframe" class="container_iframe">
-      <!-- style="border-style: none;width: 100%; height: 420px;" -->
       <iframe :src="last_report" frameborder="0" class="iframe"></iframe>
     </div>
     <div class="container_sensor">
@@ -277,7 +276,6 @@ tr:nth-child(even) {
 }
 
 .container_iframe iframe{
-  background-color: yellowgreen;
   width: 100%;
   height: 20rem;
 }
