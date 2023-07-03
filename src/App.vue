@@ -1,10 +1,39 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <body>
+    <div v-if="token">
+      <Navbar></Navbar>
+    </div>
+    <div class="container">
+      <router-view />
+    </div>
+  </body>
 </template>
+
+<script>
+import { defineAsyncComponent, ref, onMounted, onBeforeMount, watch } from "vue";
+import { useRouter } from "vue-router";
+
+export default {
+  components: {
+    Navbar: defineAsyncComponent(() =>import(/*webpackChunkName: "Navbar" */ "@/components/Navbar.vue")),
+  },
+  setup() {
+    const dateTokenExpiration = ref(null);
+    const router = useRouter();
+    const token = ref(sessionStorage.getItem("Token"));
+
+    onMounted(() => {
+      if(token.value == null){
+        router.push({ name: "login" });
+      }
+    });
+
+    return {
+      token,
+    }
+  },
+};
+</script>
 
 <style>
 #app {
@@ -15,16 +44,13 @@
   color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0d1c31;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+.container{
+  margin-top: 4rem;
 }
 </style>
